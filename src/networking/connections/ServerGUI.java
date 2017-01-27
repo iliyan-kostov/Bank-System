@@ -2,6 +2,7 @@ package networking.connections;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -194,6 +195,13 @@ public class ServerGUI extends Server {
         this.mainFrame.add(this.statusPanel, BorderLayout.CENTER);
         this.mainFrame.add(this.controlPanel, BorderLayout.SOUTH);
         this.mainFrame.pack();
+        {
+            Dimension current = this.clientListPane.getSize();
+            System.out.println("w: " + current.getWidth() + ", h: " + current.getHeight());
+            Dimension fit = new Dimension((int) current.getWidth(), 300);
+            this.clientListPane.setPreferredSize(fit);
+            this.mainFrame.pack();
+        }
         this.mainFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.mainFrame.setVisible(true);
     }

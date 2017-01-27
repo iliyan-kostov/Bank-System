@@ -1,4 +1,4 @@
-package client;
+package demo_simulator;
 
 import dataModel.Money;
 import dataModel.models.Currency;
